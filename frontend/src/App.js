@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import './App.css';
-import Buscador from './Buscador/Buscador';
+import Buscador from './Buscador/Buscador.jsx';
 
 function App() {
   return (

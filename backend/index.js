@@ -6,8 +6,17 @@ const cors =  require('cors');
 // Conectar a la base de datos MongoDB
 
 mongoose.set('strictQuery', false);
-mongoose.connect("mongodb+srv://thyaravintimilla:SAgBv3aiqa9tLINi@cluster0.qlmd0uh.mongodb.net/?retryWrites=true&w=majority");
-
+mongoose
+    .connect('mongodb+srv://thyaravintimilla:SAgBv3aiqa9tLINi@cluster0.qlmd0uh.mongodb.net/?retryWrites=true&w=majority', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => {
+        console.log('Conexión exitosa a MongoDB Atlas');
+    })
+    .catch((error) => {
+        console.error('Error al conectar a MongoDB Atlas:', error);
+    });
 
 // Crear esquemas de Mongoose para las tablas de clientes y contratos
 const ClienteSchema = new mongoose.Schema({
